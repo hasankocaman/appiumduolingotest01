@@ -24,12 +24,15 @@ public class DuolingoTest1 {
 
 
         AndroidDriver<AndroidElement> driver = new AndroidDriver<>(new URL("http:127.0.0.1:4723/wd/hub"), desiredCapabilities);
-
         Thread.sleep(5000);
 
         WebElement getStarterd = driver.findElementById("com.duolingo:id/introFlowNewUserButton");
         getStarterd.click();
         Thread.sleep(3000);
+        WebElement italy=driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[4]/android.widget.TextView");
+        String italyStr= italy.getText();
+        System.out.println("italyStr = " + italyStr);
+
         WebElement getGerman = driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[3]/android.widget.TextView");
         getGerman.click();
         Thread.sleep(5000);
